@@ -13,21 +13,37 @@
 
 ## 💻 J'utilise
 
-### Un exemple personnel commenté ❌ / ✔️
+### Un exemple personnel commenté ✔️
 
-### Utilisation dans un projet ❌ / ✔️
+## Définition d'un type de donnée ici Inputs pour gérer les données d'un formulaire ##
 
-[lien github](...)
+  type Inputs = {
+    title: string;
+    description: string;
+    owner: string;
+    price: string;
+    pictures: { url: string }[];
+    location: string;
+    createdAt: string;
+    category: string;
+    tag: string[];
+    __typename?: string;
+  };
+
+
+### Utilisation dans un projet  ✔️
+
+[lien du projet](https://github.com/LucS0MA/APIrest)
 
 Description :
 
-### Utilisation en production si applicable❌ / ✔️
+### Utilisation en production si applicable ✔️
 
-[lien du projet](...)
+[lien du projet](https://github.com/LucS0MA/APIrest)
 
 Description :
 
-### Utilisation en environement professionnel ❌ / ✔️
+### Utilisation en environement professionnel  ✔️
 
 Description :
 
