@@ -15,21 +15,34 @@
 
 ## 💻 J'utilise
 
-### Un exemple personnel commenté ❌ / ✔️
+### Un exemple personnel commenté  ✔️
 
-### Utilisation dans un projet ❌ / ✔️
+## Cette fonction me permet de mettre au bon format la date que je récupère d'une annonce depuis la BDD pour qu'elle soit bien lisible dans le frontend ##
 
-[lien github](...)
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("fr-FR", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  };
+
+### Utilisation dans un projet ✔️
+
+[lien du projet](https://github.com/LucS0MA/APIrest)
 
 Description :
 
-### Utilisation en production si applicable❌ / ✔️
+### Utilisation en production si applicable ✔️
 
-[lien du projet](...)
+[lien du projet](https://github.com/LucS0MA/APIrest)
 
 Description :
 
-### Utilisation en environement professionnel ❌ / ✔️
+### Utilisation en environement professionnel ❌ 
 
 Description :
 
