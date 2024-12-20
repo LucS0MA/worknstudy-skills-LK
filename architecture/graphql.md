@@ -15,17 +15,30 @@
 
 ## 💻 J'utilise
 
-### Un exemple personnel commenté ❌ / ✔️
+### Un exemple personnel commenté ✔️
 
-### Utilisation dans un projet ❌ / ✔️
+## Query pour récupérer les Ad de ma BDD selon une recherche par titre partielle ##
+  @Query(() => [Ad])
+  async getAdsByKeyword(@Arg("adTitle") adTitle: string) {
+    const adsByadTitle = await Ad.find({
+      where: {
+        title: ILike(`%${adTitle}%`),
+      },
+    });
+    return adsByadTitle;
+  }
 
-[lien github](...)
+
+
+### Utilisation dans un projet ✔️
+
+[lien github](https://github.com/LucS0MA/APIrest)
 
 Description :
 
-### Utilisation en production si applicable❌ / ✔️
+### Utilisation en production si applicable ✔️
 
-[lien du projet](...)
+[lien github](https://github.com/LucS0MA/APIrest)
 
 Description :
 
