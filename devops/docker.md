@@ -6,28 +6,46 @@
 
 ## 🎓 J'ai compris et je peux expliquer
 
-- la création d'une image docker ❌
-- l'éxécution d'un container ❌ 
-- l'orchestration de containers avec docker-compose ❌ 
+- la création d'une image docker ✔️
+- l'éxécution d'un container ✔️
+- l'orchestration de containers avec docker-compose ✔️
 
 
 ## 💻 J'utilise
 
-### Un exemple personnel commenté ❌ / ✔️
+### Un exemple personnel commenté  ✔️
 
-### Utilisation dans un projet ❌ / ✔️
+## Ici le Dockerfile de mon backend ##
 
-[lien github](...)
+FROM node:lts-alpine
+
+RUN apk --no-cache add curl
+
+WORKDIR /app
+
+COPY package.json package.json
+RUN npm install
+
+COPY src src
+COPY tsconfig.json tsconfig.json
+
+
+
+CMD npm start
+
+### Utilisation dans un projet  ✔️
+
+[lien github](https://github.com/LucS0MA/APIrest)
 
 Description :
 
-### Utilisation en production si applicable❌ / ✔️
+### Utilisation en production si applicable ✔️
 
-[lien du projet](...)
+[lien du projet](https://github.com/LucS0MA/APIrest)
 
 Description :
 
-### Utilisation en environement professionnel ❌ / ✔️
+### Utilisation en environement professionnel ❌ 
 
 Description :
 
