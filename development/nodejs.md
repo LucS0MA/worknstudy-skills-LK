@@ -13,7 +13,38 @@
 
 ## 💻 J'utilise
 
-### Un exemple personnel commenté ❌ / ✔️
+### Un exemple personnel commenté  ✔️
+
+## Ceci est l'index.ts de mon backend, c'est ici qu'est défini le lancement de ma BDD, la défnition de mon schéma Apollo avec GraphQL
+ainsi que la définition du port sur lequel se lancera mon API GraphQL ##
+
+import { ApolloServer } from "@apollo/server";
+import { startStandaloneServer } from "@apollo/server/standalone";
+import { dataSourceGoodCorner } from "./config/db";
+import { buildSchema } from "type-graphql";
+import AdResolver from "./resolvers/AdResolvers";
+import CategoryResolvers from "./resolvers/CategoryResolvers";
+import TagResolvers from "./resolvers/TagResolvers";
+
+const start = async () => {
+  await dataSourceGoodCorner.initialize();
+
+  const schema = await buildSchema({
+    resolvers: [AdResolver, CategoryResolvers, TagResolvers],
+  });
+
+  const server = new ApolloServer({
+    schema,
+  });
+  const { url } = await startStandaloneServer(server, {
+    listen: { port: 4000 },
+  });
+
+  console.log(`🚀 Server listening at: ${url}`);
+  console.log('test hot reload')
+};
+start();
+
 
 ```javascript
 // this function takes a path to a .md file of the host system and write the HTML version of this file
@@ -21,19 +52,19 @@
 const convertMDFileToHTML = (pathToMDfile) => /* ... path to HTML file */
 ```
 
-### Utilisation dans un projet ❌ / ✔️
+### Utilisation dans un projet ✔️
 
-[lien github](...)
-
-Description :
-
-### Utilisation en production si applicable❌ / ✔️
-
-[lien du projet](...)
+[lien github](https://github.com/LucS0MA/APIrest)
 
 Description :
 
-### Utilisation en environement professionnel ❌ / ✔️
+### Utilisation en production si applicable ✔️
+
+[lien github](https://github.com/LucS0MA/APIrest)
+
+Description :
+
+### Utilisation en environement professionnel ❌ 
 
 Description :
 
